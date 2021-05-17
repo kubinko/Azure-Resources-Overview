@@ -3,7 +3,6 @@ using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace PatientBlobClient
@@ -70,7 +69,7 @@ namespace PatientBlobClient
                 else
                 {
                     Console.WriteLine($"Blob leased. Current lease state: {response.Value.LeaseState}");
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                 }
             }
 

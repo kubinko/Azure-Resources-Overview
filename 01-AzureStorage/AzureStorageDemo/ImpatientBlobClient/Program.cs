@@ -4,7 +4,6 @@ using Azure.Storage.Blobs.Models;
 using Azure.Storage.Blobs.Specialized;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ImpatientBlobClient
@@ -59,7 +58,7 @@ namespace ImpatientBlobClient
                     }
                     else
                     {
-                        Thread.Sleep(1000);
+                        await Task.Delay(1000);
                     }
                 }
             }

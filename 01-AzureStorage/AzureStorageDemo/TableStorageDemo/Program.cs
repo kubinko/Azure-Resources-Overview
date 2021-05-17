@@ -23,7 +23,7 @@ namespace TableStorageDemo
             _tableClient = _account.CreateCloudTableClient();
 
             await InitializeTable("people");
-            //ListAllTables();
+            ListAllTables();
 
             //await InsertPerson();
             //await InsertPeople();
@@ -81,7 +81,7 @@ namespace TableStorageDemo
             }
         }
 
-        private static async Task InsertPerson()
+        private static Task InsertPerson()
         {
             var person = new Person("DC", "1")
             {
@@ -90,17 +90,17 @@ namespace TableStorageDemo
                 Age = 33
             };
             TableOperation operation = TableOperation.Insert(person);
-            await _table.ExecuteAsync(operation);
+            return _table.ExecuteAsync(operation);
         }
 
-        private static async Task InsertPeople()
+        private static Task InsertPeople()
         {
             var batchOperation = new TableBatchOperation();
             batchOperation.Insert(new Person("Marvel", "1") { Name = "Tony", Surname = "Stark", Age = 50/*, Nickname = "Iron man"*/ });
             batchOperation.Insert(new Person("Marvel", "2") { Name = "Steve", Surname = "Rogers", Age = 30/*, Nickname = "Captain America"*/ });
             batchOperation.Insert(new Person("Marvel", "3") { Name = "Bruce", Surname = "Banner", Age = 42/*, Nickname = "Hulk"*/ });
 
-            await _table.ExecuteBatchAsync(batchOperation);
+            return _table.ExecuteBatchAsync(batchOperation);
         }
 
         private static async Task UpdatePeople()

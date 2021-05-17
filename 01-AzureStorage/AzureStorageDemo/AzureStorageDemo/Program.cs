@@ -7,7 +7,6 @@ using Azure.Storage.Sas;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace AzureStorageDemo
@@ -28,7 +27,7 @@ namespace AzureStorageDemo
             //_client = GetClientViaSasSignature();
 
             //await ValidateConnection();
-            //await InitializeContainer("testcontainer");
+            await InitializeContainer("testcontainer");
             //await UploadBlob("sample_file.json", "newBlob.json");
             //await UploadBlob("8k_image.jpg", "imageBlob.jpg");
             //await ListBlobs();
@@ -39,7 +38,7 @@ namespace AzureStorageDemo
             //await DeleteBlob("newBlob.json");
             //GenerateSasToken("imageBlob.jpg");
             //await GenerateSasTokenFromPolicy("imageBlob.jpg");
-            //await LeaseBlob("imageBlob.jpg");
+            await LeaseBlob("imageBlob.jpg");
             //await LeaseBlobWithBreak("imageBlob.jpg");
             //await LeaseBlobInfinitely("imageBlob.jpg");
         }
@@ -77,7 +76,7 @@ namespace AzureStorageDemo
             return _container.CreateIfNotExistsAsync(PublicAccessType.None);
         }
 
-        private static async Task UploadBlob(string filePath, string blobName)
+        private static Task UploadBlob(string filePath, string blobName)
         {
             BlobClient blob = _container.GetBlobClient(blobName);
             var options = new BlobUploadOptions()
@@ -94,7 +93,7 @@ namespace AzureStorageDemo
             };
 
             Console.WriteLine($"Uploading blob from {filePath} to '{_container.Name}\\{blobName}'...");
-            await blob.UploadAsync(filePath, options);
+            return blob.UploadAsync(filePath, options);
         }
 
         class ProgressMarker : IProgress<long>
@@ -266,7 +265,7 @@ namespace AzureStorageDemo
                 for (int i = 0; i < 10; i++)
                 {
                     Console.WriteLine($"{60 - i} second(s) remaining on lease...");
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                 }
             }
             catch (Exception ex)
@@ -291,7 +290,7 @@ namespace AzureStorageDemo
                 for (int i = 0; i < 10; i++)
                 {
                     Console.WriteLine($"{60 - i} second(s) remaining on lease...");
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                 }
             }
             catch (Exception ex)
@@ -306,7 +305,7 @@ namespace AzureStorageDemo
 
             for (int i = 1; i < 10; i++)
             {
-                Thread.Sleep(1000);
+                await Task.Delay(1000);
                 Console.WriteLine($"{10 - i} second(s) remaining on the lease...");
             }
         }
