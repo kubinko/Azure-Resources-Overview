@@ -10,8 +10,8 @@ namespace ImpatientBlobClient
 {
     class Program
     {
-        private const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=berthotymeetup;AccountKey=epqRtSN/tPPZgEhuxl2Aq5e2yZv5fmdm1jWOJT0ya7UFgAKcQ+COqTgVJXhp1kUpACO66XnqtXMz395a1wVsLA==;EndpointSuffix=core.windows.net";
-
+        private const string ConnectionString = "<storage account connection string>";
+        
         private static BlobServiceClient _client;
         private static BlobContainerClient _container;
 
