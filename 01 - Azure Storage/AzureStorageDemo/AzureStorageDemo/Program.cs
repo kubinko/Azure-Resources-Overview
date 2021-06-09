@@ -13,8 +13,8 @@ namespace AzureStorageDemo
 {
     class Program
     {
-        private const string ServiceUrl = "https://<storage name>.blob.core.windows.net";
-        private const string ConnectionString = "<connection string>";
+        private const string ServiceUrl = "https://berthotymeetup.blob.core.windows.net";
+        private const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=berthotymeetup;AccountKey=epqRtSN/tPPZgEhuxl2Aq5e2yZv5fmdm1jWOJT0ya7UFgAKcQ+COqTgVJXhp1kUpACO66XnqtXMz395a1wVsLA==;EndpointSuffix=core.windows.net";
         private const string SasSignature = "";
 
         private static BlobServiceClient _client;
@@ -22,8 +22,8 @@ namespace AzureStorageDemo
 
         static async Task Main(string[] args)
         {
-            //_client = GetClientViaAAD();
             _client = GetClientViaConnectionString();
+            //_client = GetClientViaAAD();
             //_client = GetClientViaSasSignature();
 
             //await ValidateConnection();
@@ -38,9 +38,42 @@ namespace AzureStorageDemo
             //await DeleteBlob("newBlob.json");
             //GenerateSasToken("imageBlob.jpg");
             //await GenerateSasTokenFromPolicy("imageBlob.jpg");
-            await LeaseBlob("imageBlob.jpg");
+            //await LeaseBlob("imageBlob.jpg");
             //await LeaseBlobWithBreak("imageBlob.jpg");
-            //await LeaseBlobInfinitely("imageBlob.jpg");
+            await LeaseBlobInfinitely("imageBlob.jpg");
+        }
+
+        async static Task CreateBlockBlobAsync(string accountName, string containerName, string blobName)
+        {
+            // Construct the blob container endpoint from the arguments.
+            string containerEndpoint = string.Format("https://{0}.blob.core.windows.net/{1}",
+                                                        accountName,
+                                                        containerName);
+
+            // Get a credential and create a client object for the blob container.
+            BlobContainerClient containerClient = new BlobContainerClient(new Uri(containerEndpoint),
+                                                                            new DefaultAzureCredential());
+
+            try
+            {
+                // Create the container if it does not exist.
+                await containerClient.CreateIfNotExistsAsync();
+
+                // Upload text to a new block blob.
+                string blobContents = "This is a block blob.";
+                byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(blobContents);
+
+                using (MemoryStream stream = new MemoryStream(byteArray))
+                {
+                    await containerClient.UploadBlobAsync(blobName, stream);
+                }
+            }
+            catch (RequestFailedException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+                throw;
+            }
         }
 
         private static BlobServiceClient GetClientViaAAD()
@@ -81,15 +114,15 @@ namespace AzureStorageDemo
             BlobClient blob = _container.GetBlobClient(blobName);
             var options = new BlobUploadOptions()
             {
-                /*AccessTier = AccessTier.Hot,
+                AccessTier = AccessTier.Hot,
                 HttpHeaders = new BlobHttpHeaders()
                 {
-                    ContentType = "application/json"
+                    ContentType = "image/jpg"
                 },
                 Metadata = new Dictionary<string, string>(new KeyValuePair<string, string>[] {
                     new KeyValuePair<string, string>("custom_property", "custom value")
                 }),
-                ProgressHandler = new ProgressMarker() { TotalBytes = new FileInfo(filePath).Length }*/
+                ProgressHandler = new ProgressMarker() { TotalBytes = new FileInfo(filePath).Length }
             };
 
             Console.WriteLine($"Uploading blob from {filePath} to '{_container.Name}\\{blobName}'...");
