@@ -45,3 +45,23 @@
         ]
     ]
 }
+
+{
+	"children": [
+        {
+            "name": "Ferko",
+            "age": 4
+        },
+        {
+            "name": "Zuzka",
+            "age": 8
+        },
+        {
+            "name": "Jožko",
+            "age": 3
+        }
+    ]
+}
+
+SELECT c.name, c.age, p.surname as parent
+FROM p JOIN c IN p.children
