@@ -1,0 +1,47 @@
+{
+  "id": "1",
+  "name": "František",
+  "surname": "Mrkvička",
+  "city": "Žilina",
+  "email": "mrkvicka@gmail.com"
+}
+
+{
+  "name": "Jozef",
+  "city": "Bratislava",
+  "email": "jozef@gmail.com"
+}
+
+{
+  "name": "Jozef",
+    "surname": "Mak",
+    "city": "Žilina",
+  "email": "jozef.mak@centrum.sk"
+}
+
+{
+    "indexingMode": "consistent",
+    "automatic": true,
+    "includedPaths": [
+        {
+            "path": "/*"
+        }
+    ],
+    "excludedPaths": [
+        {
+            "path": "/\"_etag\"/?"
+        }
+    ],
+    "compositeIndexes": [
+        [
+            {
+                "path": "/city",
+                "order": "ascending"
+            },
+            {
+                "path": "/name",
+                "order": "ascending"
+            }
+        ]
+    ]
+}
