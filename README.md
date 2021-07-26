@@ -4,3 +4,4 @@ Introduction into most common Azure resource types with presentation, sample dat
 ## Table of contents
 - [01 - Azure Storage](https://github.com/kubinko/Azure-Resources-Overview/tree/main/01%20-%20Azure%20Storage) - Information about Azure Blob Storage and Azure Table Storage services.
 - [02 - Cosmos DB](https://github.com/kubinko/Azure-Resources-Overview/tree/main/02%20-%20Cosmos%20DB) - Information about Azure Cosmos DB service.
+- [03 - App Service (Web App)](https://github.com/kubinko/Azure-Resources-Overview/tree/main/03%20-%20App%20Service) - Information about Azure App Service (Web App).
