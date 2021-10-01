@@ -386,3 +386,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+**/local.settings.json
+**/serviceDependencies.local.json
