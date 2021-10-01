@@ -9,12 +9,15 @@
     }
   },
   "functions": [
-    "TimerTriggerFunction"/*,
+    /*"TimerTriggerFunction",
     "HelloWorld",
     "HelloUser",
     "HelloAdmin",
     "CustomPayload",
-    "CustomRoute"*/
+    "CustomRoute",*/
+    "ProcessNewBlob",
+    "FindBlob",
+    "ProcessFile"
   ],
   "extensions": {
     /*"http": {
