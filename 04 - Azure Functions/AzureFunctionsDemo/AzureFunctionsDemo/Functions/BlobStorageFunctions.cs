@@ -24,17 +24,16 @@ namespace AzureFunctionsDemo.Functions
         [FunctionName(nameof(FindBlob))]
         public static IActionResult FindBlob(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "blobs/{id}")] HttpRequest req,
-            [Blob("catalog/{id}", FileAccess.ReadWrite, Connection = "BlobStorageConnectionString")] CloudBlockBlob myBlob,
+            [Blob("catalog/{id}", FileAccess.Read, Connection = "BlobStorageConnectionString")] Stream blob,
+            string id,
             ILogger log)
         {
-            if (myBlob.Properties.ETag == null)
+            if (blob == null)
             {
-                return new NotFoundObjectResult(myBlob.Name);
+                return new NotFoundObjectResult(id);
             }
 
-            return new OkObjectResult($"Blob {myBlob.Name} found.\n" +
-                $"Size:         {myBlob.Properties.Length:###,###,##0 B}\n" +
-                $"Content Type: {myBlob.Properties.ContentType}");
+            return new OkObjectResult($"Blob {id} found.\nSize: {blob.Length:###,###,##0 B}");
         }
 
         [FunctionName(nameof(ProcessFile))]
