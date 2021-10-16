@@ -16,6 +16,7 @@
     "CustomPayload",
     "CustomRoute",*/
     "ProcessNewBlob",
+    "PoisonNewBlob",
     "FindBlob",
     "ProcessFile"
   ],

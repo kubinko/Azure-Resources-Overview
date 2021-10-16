@@ -21,6 +21,16 @@ namespace AzureFunctionsDemo.Functions
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
         }
 
+        [FunctionName(nameof(PoisonNewBlob))]
+        public static void PoisonNewBlob(
+            [BlobTrigger("dangerous/{name}", Connection = "BlobStorageConnectionString")] Stream myBlob,
+            string name,
+            ILogger log)
+        {
+            log.LogInformation($"Processing dangerous blob {name}...");
+            throw new OperationCanceledException("Something went wrong.");
+        }
+
         [FunctionName(nameof(FindBlob))]
         public static IActionResult FindBlob(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "blobs/{id}")] HttpRequest req,
