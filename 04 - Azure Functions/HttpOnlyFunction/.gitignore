@@ -4,7 +4,7 @@ bin
 obj
 appsettings.json
 .vscode
-.exe
+*.exe
 
 # Azurite artifacts
 __blobstorage__
