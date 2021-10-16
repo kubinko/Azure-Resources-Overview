@@ -7,7 +7,7 @@ namespace AzureFunctionsDemo.Functions
     public static class TimerTriggerFunctions
     {
         [FunctionName(nameof(TimerTriggerFunction))]
-        public static void TimerTriggerFunction([TimerTrigger("*/30 * * * * *")] TimerInfo myTimer, ILogger log)
+        public static void TimerTriggerFunction([TimerTrigger("%TimerSchedule%")] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
             log.LogInformation($"C# Timer trigger is running {(myTimer.IsPastDue ? "late" : "on time")}.");

@@ -14,7 +14,7 @@ namespace AzureFunctionsDemo.Functions
     {
         [FunctionName(nameof(HelloWorld))]
         public static async Task<IActionResult> HelloWorld(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -34,7 +34,7 @@ namespace AzureFunctionsDemo.Functions
 
         [FunctionName(nameof(HelloUser))]
         public static IActionResult HelloUser(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Function-authorized endpoint accessed.");
@@ -43,7 +43,7 @@ namespace AzureFunctionsDemo.Functions
 
         [FunctionName(nameof(HelloAdmin))]
         public static IActionResult HelloAdmin(
-            [HttpTrigger(AuthorizationLevel.Admin, "get", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Admin, "get")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Admin-authorized endpoint accessed.");
