@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 type InvokeRequest struct {
@@ -42,13 +42,11 @@ func orderHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	/*customHandlerPort, exists := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT")
-	if !exists {
-		customHandlerPort = "8080"
-	}*/
-	customHandlerPort := "8080"
-	mux := http.NewServeMux()
-	mux.HandleFunc("/order", orderHandler)
-	fmt.Println("Go server Listening on: ", customHandlerPort)
-	log.Fatal(http.ListenAndServe(":"+customHandlerPort, mux))
+	listenAddr := ":8080"
+	if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
+		listenAddr = ":" + val
+	}
+	http.HandleFunc("/order", orderHandler)
+	log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)
+	log.Fatal(http.ListenAndServe(listenAddr, nil))
 }
