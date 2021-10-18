@@ -9,16 +9,21 @@
     }
   },
   "functions": [
-    /*"TimerTriggerFunction",
+    /*"TimerTriggerFunction",*/
     "HelloWorld",
     "HelloUser",
     "HelloAdmin",
     "CustomPayload",
-    "CustomRoute",*/
-    "ProcessNewBlob",
+    "CustomRoute"
+    /*"ProcessNewBlob",
     "PoisonNewBlob",
     "FindBlob",
-    "ProcessFile"
+    "ProcessFile"*/
+    /*"OrderChanged",
+    "FindOrder",
+    "FindOrders",
+    "CreateOrder"*/
+    /*"ReadFile"*/
   ],
   "extensions": {
     /*"http": {
@@ -26,6 +31,9 @@
         "ApiVersion": "1.0"
       },
       "routePrefix": "testapi"
+    },*/
+    /*"cosmosDB": {
+      "connectionMode": "Gateway"
     }*/
   }
 }

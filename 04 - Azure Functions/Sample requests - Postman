@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "11ff21b4-f77c-42bc-ae6a-f0c20f5d94b7",
+		"name": "Meetup AF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HTTP trigger",
+			"item": [
+				{
+					"name": "HelloWorld",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/HelloWorld",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"HelloWorld"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HelloUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/HelloUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"HelloUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HelloAdmin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/HelloAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"HelloAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Custom payload 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"42\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/CustomPayload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"CustomPayload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Custom payload 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"42\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 18,\r\n    \"address\": {\r\n        \"street\": \"A. Rudnaya 21\",\r\n        \"city\": \"Žilina\",\r\n        \"areaCode\": \"010 08\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/CustomPayload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"CustomPayload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Custom route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/orders/42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"orders",
+								"42"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blob trigger",
+			"item": [
+				{
+					"name": "Find blob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/blobs/014-08",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"blobs",
+								"014-08"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cosmos DB",
+			"item": [
+				{
+					"name": "Find order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/order/ABC001/Order-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"order",
+								"ABC001",
+								"Order-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/orders/XYZ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"orders",
+								"XYZ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department\": \"XYZ\",\r\n    \"itemCode\": \"PQR-159\",\r\n    \"quantity\": 2.0,\r\n    \"color\": \"black\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom handler",
+			"item": [
+				{
+					"name": "Custom handler",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1005,\r\n  \"quantity\": 2,\r\n  \"color\": \"black\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello world",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/Hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Hello"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom binding",
+			"item": [
+				{
+					"name": "Read file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/custombinding/version.txt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"custombinding",
+								"version.txt"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
