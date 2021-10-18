@@ -9,31 +9,31 @@
     }
   },
   "functions": [
-    /*"TimerTriggerFunction",*/
+    "TimerTriggerFunction",
     "HelloWorld",
     "HelloUser",
     "HelloAdmin",
     "CustomPayload",
-    "CustomRoute"
-    /*"ProcessNewBlob",
+    "CustomRoute",
+    "ProcessNewBlob",
     "PoisonNewBlob",
     "FindBlob",
-    "ProcessFile"*/
-    /*"OrderChanged",
+    "ProcessFile",
+    "OrderChanged",
     "FindOrder",
     "FindOrders",
-    "CreateOrder"*/
-    /*"ReadFile"*/
+    "CreateOrder",
+    "ReadFile"
   ],
   "extensions": {
-    /*"http": {
+    "http": {
       "customHeaders": {
         "ApiVersion": "1.0"
       },
       "routePrefix": "testapi"
-    },*/
-    /*"cosmosDB": {
+    },
+    "cosmosDB": {
       "connectionMode": "Gateway"
-    }*/
+    }
   }
 }
