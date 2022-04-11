@@ -1,10 +1,11 @@
-POST http://localhost:7071/api/HttpStart
-
-ESW
+GET http://localhost:7071/runtime/webhooks/durabletask/instances/148e63a6-794f-4a24-8848-cc1685e953fc?taskHub=TestHubName&connection=Storage&code=eIkxXNEAsvJw6isaN78elxA1Dk1XzMx87M9Yv6MRoNUWxO6ttkjOuQ==&returnInternalServerErrorOnFailure=true
 
 ###
 
-GET http://localhost:7071/runtime/webhooks/durabletask/instances/0fcfd5b974504dc3a000564f13359d96?taskHub=TestHubName&connection=Storage&code=qqafEDM34JiWLFke7XNvWjdm8LGU3sOTwJOeBjHtqJGs7wmHEF6MsQ==
+POST http://localhost:7071/api/HttpStart
+content-type: text/plain
+
+ESW
 
 ###
 
@@ -15,4 +16,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:7071/runtime/webhooks/durabletask/instances/36ef72bba8a64de085a6f99c2cd665a0?taskHub=TestHubName&connection=Storage&code=aIUnaVIr6xuZ1rRhY2kEVLDi/gWRfobL4QuO8wFnyaXxeTyHbNsbnw==
+POST http://localhost:7071/api/HttpStart
+content-type: text/plain
+
+false
