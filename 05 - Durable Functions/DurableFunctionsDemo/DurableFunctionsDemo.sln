@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_FunctionChaining", "DurableFunctionsDemo\01_FunctionChaining.csproj", "{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_FanOutFanIn", "02_FanOutFanIn\02_FanOutFanIn.csproj", "{9E10C0D6-1969-4B52-A387-62E739E713B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E10C0D6-1969-4B52-A387-62E739E713B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E10C0D6-1969-4B52-A387-62E739E713B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E10C0D6-1969-4B52-A387-62E739E713B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E10C0D6-1969-4B52-A387-62E739E713B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

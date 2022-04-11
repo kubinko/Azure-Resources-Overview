@@ -5,3 +5,14 @@ ESW
 ###
 
 GET http://localhost:7071/runtime/webhooks/durabletask/instances/0fcfd5b974504dc3a000564f13359d96?taskHub=TestHubName&connection=Storage&code=qqafEDM34JiWLFke7XNvWjdm8LGU3sOTwJOeBjHtqJGs7wmHEF6MsQ==
+
+###
+
+POST http://localhost:7071/api/HttpStart
+content-type: application/json
+
+[ "DB1", "DB2", "DB3", "DB4", "DB5" ]
+
+###
+
+GET http://localhost:7071/runtime/webhooks/durabletask/instances/36ef72bba8a64de085a6f99c2cd665a0?taskHub=TestHubName&connection=Storage&code=aIUnaVIr6xuZ1rRhY2kEVLDi/gWRfobL4QuO8wFnyaXxeTyHbNsbnw==
