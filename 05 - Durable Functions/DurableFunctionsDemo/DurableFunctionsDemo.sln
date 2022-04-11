@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_FunctionChaining", "DurableFunctionsDemo\01_FunctionChaining.csproj", "{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CCE777-9FA7-4484-831F-4C0CDF9F83B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3D6CA53-248D-4EFA-9161-F0966D936841}
+	EndGlobalSection
+EndGlobal
