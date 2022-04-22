@@ -35,3 +35,73 @@ POST http://localhost:7071/runtime/webhooks/durabletask/instances/4f0af4c9082448
 content-type: application/json
 
 "Jakub Berthoty"
+
+### Aggregator (function) - CREDIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityFunction
+content-type: application/json
+
+{
+    "operation": "credit",
+    "amount": 11.58
+}
+
+### Aggregator (function) - DEBIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityFunction
+content-type: application/json
+
+{
+    "operation": "debit",
+    "amount": 5.14
+}
+
+### Aggregator (function) - GET entity value
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/Account/myAccount
+
+### Aggregator (function) - CREDIT (via API)
+
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/Account/myAccount?op=credit
+content-type: application/json
+
+123.45
+
+### Aggregator (function) - LIST
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/Account
+
+### Aggregator (class) - CREDIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityClass
+content-type: application/json
+
+{
+    "operation": "credit",
+    "amount": 15.84
+}
+
+### Aggregator (class) - DEBIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityClass
+content-type: application/json
+
+{
+    "operation": "debit",
+    "amount": 3.76
+}
+
+### Aggregator (class) - GET entity value
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/AccountClass/myClassAccount
+
+### Aggregator (class) - CREDIT (via API)
+
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/AccountClass/myClassAccount?op=credit
+content-type: application/json
+
+29.4
+
+### Aggregator (class) - LIST
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/AccountClass
