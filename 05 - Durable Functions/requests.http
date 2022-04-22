@@ -1,22 +1,26 @@
 GET http://localhost:7071/runtime/webhooks/durabletask/instances/148e63a6-794f-4a24-8848-cc1685e953fc?taskHub=TestHubName&connection=Storage&code=eIkxXNEAsvJw6isaN78elxA1Dk1XzMx87M9Yv6MRoNUWxO6ttkjOuQ==&returnInternalServerErrorOnFailure=true
 
-###
+### Function chaining
 
 POST http://localhost:7071/api/HttpStart
 content-type: text/plain
 
 ESW
 
-###
+### Fan out, fan in
 
 POST http://localhost:7071/api/HttpStart
 content-type: application/json
 
 [ "DB1", "DB2", "DB3", "DB4", "DB5" ]
 
-###
+### HTTP API
 
 POST http://localhost:7071/api/HttpStart
 content-type: text/plain
 
 false
+
+### Monitor
+
+GET http://localhost:7071/api/StartMonitor?location=Zilina
