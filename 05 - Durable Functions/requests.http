@@ -1,4 +1,4 @@
-GET http://localhost:7071/runtime/webhooks/durabletask/instances/148e63a6-794f-4a24-8848-cc1685e953fc?taskHub=TestHubName&connection=Storage&code=eIkxXNEAsvJw6isaN78elxA1Dk1XzMx87M9Yv6MRoNUWxO6ttkjOuQ==&returnInternalServerErrorOnFailure=true
+GET http://localhost:7071/runtime/webhooks/durabletask/instances/980bf099d2354f2f90b776452214cc39?taskHub=TestHubName&connection=Storage&code=QG1pnOqj1Kho3u9SaWkd4WHi38IgBBDfrEbUEWYMBY3VE325MxD5Ig==&returnInternalServerErrorOnFailure=true
 
 ### Function chaining
 
@@ -24,3 +24,14 @@ false
 ### Monitor
 
 GET http://localhost:7071/api/StartMonitor?location=Zilina
+
+### Human interaction
+
+POST http://localhost:7071/api/StartVerification
+
+### Human interaction - event
+
+POST http://localhost:7071/runtime/webhooks/durabletask/instances/4f0af4c908244804bcaf036a2f6d510a/raiseEvent/Approve?taskHub=TestHubName&connection=Storage&code=QG1pnOqj1Kho3u9SaWkd4WHi38IgBBDfrEbUEWYMBY3VE325MxD5Ig==
+content-type: application/json
+
+"Jakub Berthoty"

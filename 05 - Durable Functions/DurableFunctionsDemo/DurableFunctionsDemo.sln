@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_AsyncHttpApi", "03_Async
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_AsyncHttpApi_Client", "03_AsyncHttpApi_Client\03_AsyncHttpApi_Client.csproj", "{DB7C23F8-080D-474E-B964-C1AC09FB51D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Monitor", "04_Monitor\04_Monitor.csproj", "{A83F36CC-EBC0-487F-AC65-7D593FDAC65D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_Monitor", "04_Monitor\04_Monitor.csproj", "{A83F36CC-EBC0-487F-AC65-7D593FDAC65D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_HumanInteraction", "05_HumanInteraction\05_HumanInteraction.csproj", "{1A6C6DA4-C38A-4C58-B4B3-419F187B7DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A83F36CC-EBC0-487F-AC65-7D593FDAC65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A83F36CC-EBC0-487F-AC65-7D593FDAC65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A83F36CC-EBC0-487F-AC65-7D593FDAC65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6C6DA4-C38A-4C58-B4B3-419F187B7DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A6C6DA4-C38A-4C58-B4B3-419F187B7DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A6C6DA4-C38A-4C58-B4B3-419F187B7DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A6C6DA4-C38A-4C58-B4B3-419F187B7DA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
