@@ -37,7 +37,3 @@ else
 {
     Console.WriteLine($"Failed with HTTP {(int)response.StatusCode} {response.ReasonPhrase}.");
 }
-
-Console.WriteLine();
-Console.WriteLine("Press any key to end...");
-Console.ReadKey();
