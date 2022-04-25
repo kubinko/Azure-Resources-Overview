@@ -1,0 +1,105 @@
+### Function chaining
+
+POST http://localhost:7071/api/HttpStart
+content-type: text/plain
+
+ESW
+
+### Fan out, fan in
+
+POST http://localhost:7071/api/HttpStart
+content-type: application/json
+
+[ "DB1", "DB2", "DB3", "DB4", "DB5" ]
+
+### HTTP API
+
+POST http://localhost:7071/api/HttpStart
+content-type: text/plain
+
+false
+
+### Monitor
+
+GET http://localhost:7071/api/StartMonitor?location=Zilina
+
+### Human interaction
+
+POST http://localhost:7071/api/StartVerification
+
+### Human interaction - event
+
+POST http://localhost:7071/runtime/webhooks/durabletask/instances/96672d96e7804c469508abf555f0d185/raiseEvent/Approve?taskHub=TestHubName&connection=Storage&code=QG1pnOqj1Kho3u9SaWkd4WHi38IgBBDfrEbUEWYMBY3VE325MxD5Ig==
+content-type: application/json
+
+"Jakub Berthoty"
+
+### Aggregator (function) - CREDIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityFunction
+content-type: application/json
+
+{
+    "operation": "credit",
+    "amount": 11.58
+}
+
+### Aggregator (function) - DEBIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityFunction
+content-type: application/json
+
+{
+    "operation": "debit",
+    "amount": 5.14
+}
+
+### Aggregator (function) - GET entity value
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/Account/myAccount
+
+### Aggregator (function) - CREDIT (via API)
+
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/Account/myAccount?op=credit
+content-type: application/json
+
+123.45
+
+### Aggregator (function) - LIST
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/Account
+
+### Aggregator (class) - CREDIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityClass
+content-type: application/json
+
+{
+    "operation": "credit",
+    "amount": 15.84
+}
+
+### Aggregator (class) - DEBIT
+
+POST http://localhost:7071/api/PerformTransactionWithEntityClass
+content-type: application/json
+
+{
+    "operation": "debit",
+    "amount": 3.76
+}
+
+### Aggregator (class) - GET entity value
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/AccountClass/myClassAccount
+
+### Aggregator (class) - CREDIT (via API)
+
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/AccountClass/myClassAccount?op=credit
+content-type: application/json
+
+29.4
+
+### Aggregator (class) - LIST
+
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/AccountClass
