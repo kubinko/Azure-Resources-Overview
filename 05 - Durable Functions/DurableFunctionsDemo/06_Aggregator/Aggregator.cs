@@ -32,8 +32,11 @@ namespace DurableFunctionsDemo
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             var transaction = context.GetInput<Transaction>();
+
             var entityId = new EntityId(nameof(Account), "myAccount");
+
             await context.CallEntityAsync<double>(entityId, transaction.Operation, transaction.Amount);
+
             var currentAmount = await context.CallEntityAsync<double>(entityId, "get");
 
             return currentAmount;
@@ -86,7 +89,9 @@ namespace DurableFunctionsDemo
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             var transaction = context.GetInput<Transaction>();
+
             var entityId = new EntityId(nameof(AccountClass), "myClassAccount");
+
             context.SignalEntity(entityId, transaction.Operation, transaction.Amount);
 
             var currentAmount = await context.CallEntityAsync<double>(entityId, "get");

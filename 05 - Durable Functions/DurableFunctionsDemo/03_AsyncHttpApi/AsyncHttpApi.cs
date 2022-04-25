@@ -18,11 +18,12 @@ namespace DurableFunctionsDemo
             ILogger log)
         {
             var shouldFail = bool.Parse(await req.Content.ReadAsStringAsync());
+
             string instanceId = await starter.StartNewAsync(nameof(RunOrchestrator), Guid.NewGuid().ToString(), shouldFail);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
-            return starter.CreateCheckStatusResponse(req, instanceId, true);
+            return starter.CreateCheckStatusResponse(req, instanceId);
         }
 
         [FunctionName(nameof(RunOrchestrator))]

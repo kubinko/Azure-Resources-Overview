@@ -19,6 +19,7 @@ namespace DurableFunctionsDemo
             ILogger log)
         {
             string repository = await req.ReadAsStringAsync();
+
             string instanceId = await starter.StartNewAsync<string>(nameof(RunOrchestrator), repository);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
@@ -31,6 +32,7 @@ namespace DurableFunctionsDemo
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             var repository = context.GetInput<string>();
+
             var result = new Result();
 
             DateTime startTime = context.CurrentUtcDateTime;

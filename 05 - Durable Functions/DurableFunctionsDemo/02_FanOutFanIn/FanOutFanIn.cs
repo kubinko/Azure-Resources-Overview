@@ -20,6 +20,7 @@ namespace DurableFunctionsDemo
             ILogger log)
         {
             var databases = JsonSerializer.Deserialize<string[]>(await req.Content.ReadAsStringAsync());
+
             string instanceId = await starter.StartNewAsync(nameof(RunOrchestrator), databases);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");

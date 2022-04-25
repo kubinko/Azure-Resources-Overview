@@ -29,6 +29,7 @@ namespace DurableFunctionsDemo
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             using var cancelTokenSource = new CancellationTokenSource();
+
             DateTime expiration = context.CurrentUtcDateTime.AddSeconds(20);
             Task timeout = context.CreateTimer(expiration, cancelTokenSource.Token);
 

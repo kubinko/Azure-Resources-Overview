@@ -19,8 +19,8 @@ namespace DurableFunctionsDemo
         {
             var queryDictionary = System.Web.HttpUtility.ParseQueryString(req.RequestUri.Query);
             var location = queryDictionary["location"];
-            string instanceId = $"{location}Monitor";
 
+            string instanceId = $"{location}Monitor";
             await starter.StartNewAsync(nameof(RunOrchestrator), instanceId, location);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
@@ -33,6 +33,7 @@ namespace DurableFunctionsDemo
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             string location = context.GetInput<string>();
+
             int temperature = await context.CallActivityAsync<int>(nameof(CheckTemperature), location);
 
             await context.CallActivityAsync(nameof(Log), $"Temperature: {temperature}°C");
