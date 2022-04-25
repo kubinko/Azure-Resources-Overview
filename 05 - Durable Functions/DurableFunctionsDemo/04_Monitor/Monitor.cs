@@ -25,7 +25,7 @@ namespace DurableFunctionsDemo
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
-            return starter.CreateCheckStatusResponse(req, instanceId, true);
+            return starter.CreateCheckStatusResponse(req, instanceId);
         }
 
         [FunctionName(nameof(RunOrchestrator))]
@@ -38,7 +38,7 @@ namespace DurableFunctionsDemo
 
             await context.CallActivityAsync(nameof(Log), $"Temperature: {temperature}°C");
 
-            if (temperature < 12)
+            if (temperature < 10)
             {
                 DateTime timeOfNextCheck = context.CurrentUtcDateTime.AddSeconds(5);
                 await context.CreateTimer(timeOfNextCheck, CancellationToken.None);

@@ -1,6 +1,3 @@
-
-GET http://localhost:7071/runtime/webhooks/durabletask/instances/885b4a30c81b4fca8e103e9d896565f7?taskHub=TestHubName&connection=Storage&code=aIUnaVIr6xuZ1rRhY2kEVLDi/gWRfobL4QuO8wFnyaXxeTyHbNsbnw==
-
 ### Function chaining
 
 POST http://localhost:7071/api/HttpStart
@@ -32,7 +29,7 @@ POST http://localhost:7071/api/StartVerification
 
 ### Human interaction - event
 
-POST http://localhost:7071/runtime/webhooks/durabletask/instances/4f0af4c908244804bcaf036a2f6d510a/raiseEvent/Approve?taskHub=TestHubName&connection=Storage&code=QG1pnOqj1Kho3u9SaWkd4WHi38IgBBDfrEbUEWYMBY3VE325MxD5Ig==
+POST http://localhost:7071/runtime/webhooks/durabletask/instances/96672d96e7804c469508abf555f0d185/raiseEvent/Approve?taskHub=TestHubName&connection=Storage&code=QG1pnOqj1Kho3u9SaWkd4WHi38IgBBDfrEbUEWYMBY3VE325MxD5Ig==
 content-type: application/json
 
 "Jakub Berthoty"

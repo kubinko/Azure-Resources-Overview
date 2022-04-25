@@ -35,7 +35,7 @@ namespace DurableFunctionsDemo
 
             var entityId = new EntityId(nameof(Account), "myAccount");
 
-            await context.CallEntityAsync<double>(entityId, transaction.Operation, transaction.Amount);
+            context.SignalEntity(entityId, transaction.Operation, transaction.Amount);
 
             var currentAmount = await context.CallEntityAsync<double>(entityId, "get");
 

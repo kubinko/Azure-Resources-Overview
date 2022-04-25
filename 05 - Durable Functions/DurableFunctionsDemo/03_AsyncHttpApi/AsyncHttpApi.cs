@@ -23,7 +23,7 @@ namespace DurableFunctionsDemo
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
-            return starter.CreateCheckStatusResponse(req, instanceId);
+            return starter.CreateCheckStatusResponse(req, instanceId, true);
         }
 
         [FunctionName(nameof(RunOrchestrator))]
